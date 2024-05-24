@@ -1,11 +1,11 @@
 const scoreboard = document.querySelector(".scoreboard");
 let homeScoreEl = scoreboard.querySelector(".home__score");
 let homeTitleEl = scoreboard.querySelector(".home__title");
-let guestScoreEl = scoreboard.querySelector(".guest__score");
-let guestTitleEl = scoreboard.querySelector(".guest__title");
+let awayScoreEl = scoreboard.querySelector(".away__score");
+let awayTitleEl = scoreboard.querySelector(".away__title");
 
 let homeScore = 0;
-let guestScore = 0;
+let awayScore = 0;
 
 function increaseHomeScore(amount) {
     homeScore += amount;
@@ -17,37 +17,37 @@ function updateHomeScore() {
     homeScoreEl.textContent = homeScore;
 }
 
-function increaseGuestScore(amount) {
-    guestScore += amount;
-    updateGuestScore();
+function increaseawayScore(amount) {
+    awayScore += amount;
+    updateawayScore();
     checkLeader()
 }
 
-function updateGuestScore() {
-    guestScoreEl.textContent = guestScore;
+function updateawayScore() {
+    awayScoreEl.textContent = awayScore;
 }
 
 function checkLeader() {
-    if(guestScore > homeScore) {
+    if(awayScore > homeScore) {
         homeTitleEl.classList.remove("winner");
-        guestTitleEl.classList.add("winner");
+        awayTitleEl.classList.add("winner");
         return;
     }
     
-    if(homeScore > guestScore) {
-        guestTitleEl.classList.remove("winner");
+    if(homeScore > awayScore) {
+        awayTitleEl.classList.remove("winner");
         homeTitleEl.classList.add("winner");
         return;
     }
     
     homeTitleEl.classList.remove("winner");
-    guestTitleEl.classList.remove("winner");
+    awayTitleEl.classList.remove("winner");
 }
 
 function resetGame() {
     homeScore = 0;
     updateHomeScore();
-    guestScore = 0;
-    updateGuestScore();
+    awayScore = 0;
+    updateawayScore();
     checkLeader();
 }
