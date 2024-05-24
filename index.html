@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container flex--center full-height">
+            <div class="scoreboard | cols-2">
+                <div class="home | flex--col">
+                    <h3 class="home__title">HOME</h3>
+                    <div class="home__score-container score-container">
+                        <h4 class="home__score score">0</h4>
+                    </div>
+                    <div class="buttons | flex">
+                        <button class="button" onclick="increaseHomeScore(1)">+1</button>
+                        <button class="button" onclick="increaseHomeScore(2)">+2</button>
+                        <button class="button" onclick="increaseHomeScore(3)">+3</button>
+                    </div>
+                </div>
+                <div class="guest | flex--col">
+                    <h3 class="guest__title">GUEST</h3>
+                    <div class="guest__score-container score-container">
+                        <h4 class="guest__score score">0</h4>
+                    </div>
+                    <div class="buttons | flex">
+                        <button class="button" onclick="increaseGuestScore(1)">+1</button>
+                        <button class="button" onclick="increaseGuestScore(2)">+2</button>
+                        <button class="button" onclick="increaseGuestScore(3)">+3</button>
+                    </div>
+                </div>
+                <button class="button button--reset" onclick="resetGame()">RESET</button>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
